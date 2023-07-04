@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Morse Code Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    
+    h1 {
+      color: #333;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
+    
+    .input-container {
+      margin-right: 20px;
+    }
+    
+    textarea {
+      width: 400px;
+      height: 100px;
+      padding: 10px;
+      resize: none;
+    }
+    
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    #morse-code-output {
+      font-size: 18px;
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #333;
+      background-color: #f9f9f9;
+    }
+    
+    #morse-code-learning {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+    }
+    
+    .morse-code-learning-column {
+      margin: 0 30px;
+    }
+  </style>
+  <script>
+    function convertToMorseCode() {
+      const text = document.getElementById("text-input").value.toUpperCase();
+      let morseCode = "";
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        switch (char) {
+          case "A":
+            morseCode += ".- ";
+            break;
+          case "B":
+            morseCode += "-... ";
+            break;
+          case "C":
+            morseCode += "-.-. ";
+            break;
+          case "D":
+            morseCode += "-.. ";
+            break;
+          case "E":
+            morseCode += ". ";
+            break;
+          case "F":
+            morseCode += "..-. ";
+            break;
+          case "G":
+            morseCode += "--. ";
+            break;
+          case "H":
+            morseCode += ".... ";
+            break;
+          case "I":
+            morseCode += ".. ";
+            break;
+          case "J":
+            morseCode += ".--- ";
+            break;
+          case "K":
+            morseCode += "-.- ";
+            break;
+          case "L":
+            morseCode += ".-.. ";
+            break;
+          case "M":
+            morseCode += "-- ";
+            break;
+          case "N":
+            morseCode += "-. ";
+            break;
+          case "O":
+            morseCode += "--- ";
+            break;
+          case "P":
+            morseCode += ".--. ";
+            break;
+          case "Q":
+            morseCode += "--.- ";
+            break;
+          case "R":
+            morseCode += ".-. ";
+            break;
+          case "S":
+            morseCode += "... ";
+            break;
+          case "T":
+            morseCode += "- ";
+            break;
+          case "U":
+            morseCode += "..- ";
+            break;
+          case "V":
+            morseCode += "...- ";
+            break;
+          case "W":
+            morseCode += ".-- ";
+            break;
+          case "X":
+            morseCode += "-..- ";
+            break;
+          case "Y":
+            morseCode += "-.-- ";
+            break;
+          case "Z":
+            morseCode += "--.. ";
+            break;
+          case "0":
+            morseCode += "----- ";
+            break;
+          case "1":
+            morseCode += ".---- ";
+            break;
+          case "2":
+            morseCode += "..--- ";
+            break;
+          case "3":
+            morseCode += "...-- ";
+            break;
+          case "4":
+            morseCode += "....- ";
+            break;
+          case "5":
+            morseCode += "..... ";
+            break;
+          case "6":
+            morseCode += "-.... ";
+            break;
+          case "7":
+            morseCode += "--... ";
+            break;
+          case "8":
+            morseCode += "---.. ";
+            break;
+          case "9":
+            morseCode += "----. ";
+            break;
+          case " ":
+            morseCode += "/ ";
+            break;
+          // 한글에 대한 모스 부호 추가
+          case "ㄱ":
+            morseCode += "--. ";
+            break;
+          case "ㄴ":
+            morseCode += "-. ";
+            break;
+          case "ㄷ":
+            morseCode += "-.. ";
+            break;
+          case "ㄹ":
+            morseCode += ".-. ";
+            break;
+          case "ㅁ":
+            morseCode += "-- ";
+            break;
+          case "ㅂ":
+            morseCode += "-... ";
+            break;
+          case "ㅅ":
+            morseCode += "... ";
+            break;
+          case "ㅇ":
+            morseCode += "- ";
+            break;
+          case "ㅈ":
+            morseCode += ".--- ";
+            break;
+          case "ㅊ":
+            morseCode += "-.-. ";
+            break;
+          case "ㅋ":
+            morseCode += "-.- ";
+            break;
+          case "ㅌ":
+            morseCode += "-..- ";
+            break;
+          case "ㅍ":
+            morseCode += "..-. ";
+            break;
+          case "ㅎ":
+            morseCode += ".... ";
+            break;
+          case "ㅏ":
+            morseCode += ".- ";
+            break;
+          case "ㅑ":
+            morseCode += ".-- ";
+            break;
+          case "ㅓ":
+            morseCode += ".. ";
+            break;
+          case "ㅕ":
+            morseCode += "..- ";
+            break;
+          case "ㅗ":
+            morseCode += "--- ";
+            break;
+          case "ㅛ":
+            morseCode += "-.-- ";
+            break;
+          case "ㅜ":
+            morseCode += "..-- ";
+            break;
+          case "ㅠ":
+            morseCode += "..-- ";
+            break;
+          case "ㅡ":
+            morseCode += "-..- ";
+            break;
+          case "ㅣ":
+            morseCode += ".. ";
+            break;
+          default:
+            morseCode += char + " ";
+            break;
+        }
+      }
+      document.getElementById("morse-code-output").innerHTML = morseCode;
+    }
+    
+    function resetText() {
+      document.getElementById("text-input").value = "";
+      document.getElementById("morse-code-output").innerHTML = "";
+    }
+    
+    function showLearningSection(sectionId) {
+      const sections = document.getElementsByClassName("morse-code-learning-column");
+      for (let i = 0; i < sections.length; i++) {
+        sections[i].style.display = "none";
+      }
+      document.getElementById(sectionId).style.display = "block";
+    }
+  </script>
+</head>
+<body>
+  <h1>Morse Code Converter</h1>
+  <div class="container">
+    <div class="input-container">
+      <textarea id="text-input" placeholder="Enter your text"></textarea>
+    </div>
+    <button onclick="convertToMorseCode()">Convert</button>
+  </div>
+  <div class="container">
+    <div>
+      <label for="morse-code-output">Morse Code:</label>
+      <p id="morse-code-output"></p>
+    </div>
+  </div>
+  <div id="morse-code-learning" class="container">
+    <div class="morse-code-learning-column">
+      <h2>Morse Code Learning</h2>
+      <p>Here you can learn the Morse code for each character.</p>
+      <!-- Add learning content for each character -->
+    </div>
+    <div class="morse-code-learning-column">
+      <h2>Morse Code Practice</h2>
+      <p>Here you can practice converting text to Morse code.</p>
+      <!-- Add practice content for converting text to Morse code -->
+    </div>
+    <div class="morse-code-learning-column">
+      <h2>Morse Code Communication</h2>
+      <p>Here you can simulate Morse code communication.</p>
+      <!-- Add communication simulation content -->
+    </div>
+  </div>
+  <div class="container">
+    <button onclick="window.location.href = 'https://phspjy123.github.io/learning.html';" style="margin-right: 300px">Morse Code Learning</button>
+    <button onclick="showLearningSection('morse-code-practice')" style="margin-right: 300px">Morse Code Practice</button>
+    <button onclick="showLearningSection('morse-code-communication')">Morse Code Communication</button>
+  </div>
+</body>
+</html>
