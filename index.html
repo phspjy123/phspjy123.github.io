@@ -2,6 +2,57 @@
 <html>
 <head>
   <title>Morse Code Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    
+    h1 {
+      color: #333;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
+    
+    .input-container {
+      margin-right: 20px;
+    }
+    
+    textarea {
+      width: 400px;
+      height: 100px;
+      padding: 10px;
+      resize: none;
+    }
+    
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    #morse-code-output {
+      font-size: 18px;
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #333;
+      background-color: #f9f9f9;
+    }
+  </style>
   <script>
     function convertToMorseCode() {
       const text = document.getElementById("text-input").value.toUpperCase();
@@ -33,11 +84,17 @@
 </head>
 <body>
   <h1>Morse Code Converter</h1>
-  <textarea id="text-input" rows="4" cols="50"></textarea>
-  <br>
-  <button onclick="convertToMorseCode()">Convert</button>
-  <br>
-  <label for="morse-code-output">Morse Code:</label>
-  <p id="morse-code-output"></p>
+  <div class="container">
+    <div class="input-container">
+      <textarea id="text-input" placeholder="Enter your text"></textarea>
+    </div>
+    <button onclick="convertToMorseCode()">Convert</button>
+  </div>
+  <div class="container">
+    <div>
+      <label for="morse-code-output">Morse Code:</label>
+      <p id="morse-code-output"></p>
+    </div>
+  </div>
 </body>
 </html>
